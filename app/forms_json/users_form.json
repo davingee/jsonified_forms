@@ -1,0 +1,47 @@
+{
+  "inputs": {
+    "email": {
+      "kind": "email_field",
+      "field_label": "Email",
+      "input_attributes": {
+        "placeholder": "Email address"
+      },
+      "control_group_attributes": {
+        "data-input": "email_address_control_group"
+      },
+      "controls_attributes": {
+        "data-input": "email_address_controls"
+      }
+    },
+    "password": {
+      "kind": "password_field",
+      "field_label": "New password",
+      "input_attributes": {
+        "placeholder": "New password"
+      }
+    },
+    "password_confirmation": {
+      "kind": "password_field",
+      "field_label": "Confirm new password"
+    },
+    "current_password": {
+      "if": {
+        "f": "encrypted_password?"
+      },
+      "kind": "password_field",
+      "field_label": "Current password",
+      "input_attributes": {
+        "placeholder": "Current password"
+      }
+    },
+    "submit": {
+      "kind": "submit",
+      "input_attributes": {
+        "value": "Update",
+        "class": "btn btn-large btn-info offset1"
+      }
+    }
+  }
+}
+
+

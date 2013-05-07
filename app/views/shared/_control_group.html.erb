@@ -1,0 +1,39 @@
+<% c_g_attributes = model.errors[field].present? ? {:class => "control-group error"} : {:class => "control-group"} %>
+<% c_attributes = {:class => "controls"} %>
+<% i_attributes = {} %>
+
+<% attributes = [] %>
+<% attributes << (defined?(control_group_attributes) ? control_group_attributes : {}) %>
+<% attributes << (defined?(controls_attributes) ? controls_attributes : {}) %>
+<% attributes << (defined?(input_attributes) ? input_attributes : {}) %>
+
+<% attributes.each do |attribute| %>
+  <% attribute.each do |key, value| %>
+    <% i_attributes[key] = value %>
+  <% end %>
+<% end %>
+
+<% show_field_name_in_error ||= show_field_name_in_error.blank? %>
+<%= content_tag :div, c_g_attributes do %>
+  <% if defined? field_label %>
+    <% if field_label == true %>
+      <%= form.label field, :class => "control-label" %>
+    <% else %>
+      <%= form.label field, field_label, :class => "control-label" %>
+    <% end %>
+  <% end %>
+  <%= content_tag :div, c_attributes do %>
+    <%= form.send(kind, field, i_attributes) %>
+    <% if model.errors[field].present? %>
+      <%= content_tag :span, :class => "help-inline" do %>
+        <% model.errors[field].each do |msg|  %>
+          <% if show_field_name_in_error.blank? then %>
+            <small><%= msg %></small><br />
+          <% else %>
+            <small><%= "#{field.to_s.humanize} #{msg}" %></small><br />
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end -%>

@@ -1,0 +1,48 @@
+{
+  "inputs": {
+    "email": {
+      "kind": "email_field",
+      "field_label": "Email",
+      "input_attributes": {
+        "placeholder": "Email"
+      },
+      "controls_attributes": {
+        "date-input": "Email"
+      }
+    },
+    "name": {
+      "if" : {
+          "f" : "test_works?"
+      },
+      "unless" : {
+          "f" : "test_not_work?"
+      },
+      "kind": "text_field",
+      "field_label": "Name",
+      "input_attributes": {
+        "placeholder": "Name"
+      }
+    },
+    "subject": {
+      "kind": "text_field",
+      "field_label": "Subject",
+      "input_attributes": {
+        "placeholder": "Subject"
+      }
+    },
+    "content": {
+      "kind": "text_area",
+      "field_label": "Content",
+      "input_attributes": {
+        "placeholder": "Please provide some content",
+        "rows": "4"
+      }
+    },
+    "submit": {
+      "kind": "submit",
+      "input_attributes": {
+        "value": "Send email"
+      }
+    }
+  }
+}
