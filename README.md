@@ -1,6 +1,9 @@
 # JsonifiedForms
 
 JsonifiedForms is a implementation of Jsonified forms! A test; if you will to see the pluralize(possibilities.count, "possibility")
+<br>
+
+Currently is designed for twitter bootstrap
 
 ## Installation
 
@@ -26,6 +29,12 @@ Or install it yourself as:
 
 4. declare everything in the json file <br>
 Sexxy? Yes!
+
+## ToDo
+1. make divs and labels bind to data-jsonified="label" attributes so that it is completely dynamic. Just adding a label hash to the json will add the specified attributes. <br>
+2. Select boxes<br>
+3. allow options to be passed for example if I dont want a field to show up if a user is nil but can not access user from f; be able to pass in user
+
 
 ## Contributing
 
